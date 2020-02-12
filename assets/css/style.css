@@ -131,7 +131,7 @@ li {
     font-size: x-large;
 }
 
-#page-footer {
+.page-footer {
     display: block;
     left: 0;
     bottom: 0;
@@ -163,8 +163,7 @@ ul.social-media {
       text-align: center;
 }
 
-.row {
-    height: 100%;
+.recipes .row {
     padding: 20px 15px 20px 15px;
     margin: 0 auto;
     background-color: rgba(9, 70, 70, 0.7);
