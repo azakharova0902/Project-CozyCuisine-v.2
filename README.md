@@ -44,4 +44,23 @@ Th website has been tested accros multiple browsers and deviced to ensure its re
 
 Please explore our smartphone view:
 
-![Smartphone-demo]()
+![Smartphone-demo](assets/images/smartphone_view.gif) 
+
+Please explore our iPad view:
+
+![iPad-demo](assets/images/iPad_view.gif)
+
+# Deployment
+
+This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named index.html.
+
+To run locally, you can clone this repository directly into the editor of your choice by pasting git clone https://github.com/azakharova0902/Project-Food.git into your terminal. To cut ties with this GitHub repository, type git remote rm origin into the terminal.
+
+# Credits
+
+1. Content - All text content was written by me (except for LoremIpsum).
+2. Media - All pictures were downloaded from https://www.pexels.com/.
+
+<hr>
+
+We hope you will enjoy your exploration of our website!
