@@ -179,13 +179,15 @@ li {
     .hero-text {
         display: none;
     }
-    img {
-      width: 100%;
+    .story {
+        padding-left: 50px;
+        padding-right: 0;
     }
     .jumbotron {
-        width: 100%;
+        width: 93%;
         height: 100%;
         float: none;
+        margin-top: 10px;
     }
 }
 
