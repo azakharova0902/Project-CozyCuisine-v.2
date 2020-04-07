@@ -1,10 +1,10 @@
-body, html {
+body,
+html {
     height: 100%;
     font-family: 'Advent Pro', sans-serif;
     background-color: rgb(88, 126, 150);
     margin: 0;
 }
-
 
 nav {
     text-align: center;
@@ -23,7 +23,7 @@ nav {
 
 a:hover {
     color: whitesmoke;
-  }
+}
 
 .hvr-glow {
     display: inline-block;
@@ -35,14 +35,14 @@ a:hover {
     transition-duration: 0.3s;
     -webkit-transition-property: box-shadow;
     transition-property: box-shadow;
-  }
+}
 
 .hero-image {
     background-image: url("../images/hero3.jpg");
     background-size: 100%;
     justify-content: center;
     background-repeat: no-repeat;
-    display: flex; 
+    display: flex;
     align-items: center;
     height: 90%;
 }
@@ -55,7 +55,7 @@ a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color:whitesmoke;
+    color: whitesmoke;
 }
 
 .hero-span {
@@ -65,9 +65,19 @@ a:hover {
     letter-spacing: 1.5px;
 }
 
+.hero-image-2 {
+    background-image: url("../images/hero-search.jpg");
+    background-size: 100%;
+    justify-content: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
 .why-us {
     margin-top: 25px;
-    text-align:  center;
+    text-align: center;
     background-color: rgba(7, 87, 87, 0.8);
     padding-top: 20px;
     padding-bottom: 20px;
@@ -80,30 +90,27 @@ a:hover {
     background-color: rgba(7, 87, 103, 0.7);
 }
 
-  
 @keyframes pulse {
     from {
-      -webkit-transform: scale3d(1, 1, 1);
-      transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
-  
     50% {
-      -webkit-transform: scale3d(1.05, 1.05, 1.05);
-      transform: scale3d(1.05, 1.05, 1.05);
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
     }
-  
     to {
-      -webkit-transform: scale3d(1, 1, 1);
-      transform: scale3d(1, 1, 1);
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
-  }
-  
+}
+
 .pulse {
     -webkit-animation-name: pulse;
     animation-name: pulse;
     animation-duration: 5000ms;
-  }
-  
+}
+
 ul {
     padding: 15px 20px 15px 20px;
 }
@@ -126,7 +133,9 @@ li {
     letter-spacing: 2.5px;
 }
 
+
 /*Media query for Home page*/
+
 
 /* smartphone */
 
@@ -134,7 +143,7 @@ li {
     .nav.justify-content-center {
         padding: 0;
     }
-    .navbar{
+    .navbar {
         padding-left: 0;
         margin-left: 0;
         width: 100%;
@@ -146,25 +155,25 @@ li {
     .hero-image {
         display: none;
     }
-   .image-youcan {
-       display: none;
-   } 
-   .why-us {
-       width: 100%;
-       margin-top: 7px;
-   }
-   .hero-span {
-       display: none;
-   }
-   ul {
-       padding: 0;
-   }
-
-   .jumbotron {
-       width: 100%;
-       height: 100%;
-   }
+    .image-youcan {
+        display: none;
+    }
+    .why-us {
+        width: 100%;
+        margin-top: 7px;
+    }
+    .hero-span {
+        display: none;
+    }
+    ul {
+        padding: 0;
+    }
+    .jumbotron {
+        width: 100%;
+        height: 100%;
+    }
 }
+
 
 /* iPad */
 
@@ -190,7 +199,6 @@ li {
         margin-top: 10px;
     }
 }
-
 
 .recipes {
     background-color: rgba(9, 70, 70, 0.7);
@@ -222,10 +230,9 @@ footer {
     align-items: center;
 }
 
-
 .foot {
     padding-top: 20px;
-    padding-bottom: 15px;    
+    padding-bottom: 15px;
     margin: 0 auto;
     width: 100%;
     align-items: center;
@@ -261,7 +268,7 @@ i:hover {
 }
 
 .copyright {
-    background-color:  rgba(5, 59, 59, 0.8);
+    background-color: rgba(5, 59, 59, 0.8);
     color: white;
     text-align: center;
     height: 30px;
@@ -286,7 +293,7 @@ i:hover {
 .workshop {
     justify-content: center;
     background-repeat: no-repeat;
-    display: flex; 
+    display: flex;
     margin: 0;
     text-align: center;
     color: white;
@@ -344,12 +351,12 @@ i:hover {
     padding: 30px;
     border: 9px solid white;
 }
-  
-.signup-form > h2 {
+
+.signup-form>h2 {
     color: #fafafa;
     margin-bottom: 20px;
 }
-  
+
 .text-input {
     letter-spacing: 2px;
     background-color: transparent;
@@ -360,22 +367,22 @@ i:hover {
     border: 1px solid #fafafa;
     border-radius: 2px;
 }
-  
+
 .text-input:hover {
     border-color: #2e5064
 }
-  
+
 .join-button {
     margin-top: 20px;
     border-radius: 2px;
     padding: 15px 32px 15px 32px;
     text-align: center;
     font-size: 100%;
-    background-color:teal;
+    background-color: teal;
     color: #fafafa;
     display: block;
 }
-  
+
 .join-button:hover {
     background-color: #fafafa;
     color: #1f4053;
@@ -385,6 +392,7 @@ i:hover {
     display: flex;
 }
 
+
 /* EMBEDED MAP */
 
 .mapouter {
@@ -392,18 +400,17 @@ i:hover {
     text-align: right;
     padding-top: 35px;
     padding-left: 15px;
-  }
+}
 
-  .gmap_canvas {
+.gmap_canvas {
     overflow: hidden;
     background: none !important;
     height: 460px;
     width: 585px;
     border: 9px solid white;
-  }
+}
 
 @media screen and (max-width: 798px) {
-
     .logo {
         width: 150px;
         height: 100px;
@@ -425,16 +432,16 @@ i:hover {
         margin-left: 23px;
         width: 90%;
     }
-   .gmap_canvas {
-       width: 305px;
-   }
+    .gmap_canvas {
+        width: 305px;
+    }
 }
 
 @media screen and (max-width: 600px) {
     img {
         width: 90%;
     }
-    .container-ws{
+    .container-ws {
         justify-content: center;
     }
     .mapouter {
@@ -443,4 +450,29 @@ i:hover {
     .signup-form {
         margin-left: 0;
     }
+}
+
+
+/*.search {
+    margin-bottom: 400px;
+}*/
+
+#search-field {
+    width: 90%;
+}
+
+.browse-recipes {
+    color: whitesmoke;
+}
+
+#output {
+    display: flex;
+    color: whitesmoke;
+    font-size: medium;
+}
+
+#output>h1,
+#source-link {
+    color: white;
+    font-size: medium;
 }
