@@ -4,17 +4,21 @@ const API_KEY_Spoon = "f801def7ce0e409c8980d737f4141bb5"
 
 const API_URL_Spoon = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY_Spoon}&number=1&query=`
 
-https: //api.spoonacular.com/recipes/search?apiKey=f801def7ce0e409c8980d737f4141bb5&number=5&query=pasta
+// const google_URL = `https://maps.googleapis.com/maps/api/directions/json?key=${API_KEY_Google}&origin=` + start + `&destination=` + end
 
-    function getSource(id) {
-        $.ajax({
-            url: "https://api.spoonacular.com/recipes/" + id + "/information?apiKey=f801def7ce0e409c8980d737f4141bb5",
-            success: function(res) {
-                $("#source-link").html(res.sourceUrl)
-                $("#source-link").attr("href", res.sourceUrl)
-            }
-        })
-    }
+const destination = "33 King Street West, Toronto, ON"
+
+//Spoonacular API block of code to render recipes upon request on Search.html
+
+function getSource(id) {
+    $.ajax({
+        url: "https://api.spoonacular.com/recipes/" + id + "/information?apiKey=f801def7ce0e409c8980d737f4141bb5",
+        success: function(res) {
+            $("#source-link").html(res.sourceUrl)
+            $("#source-link").attr("href", res.sourceUrl)
+        }
+    })
+}
 
 function getRecipe(query) {
     $.ajax({
@@ -31,8 +35,35 @@ function getRecipe(query) {
             // getSource(res.results[i].id))
 
         }
-    });
-    $(".hero-image-2").hide()
+    })
 }
 
-// "href=" + getSource(res.results[i].id)
+// Google Maps APIs (Geocoder and Directions) for Workshop.html
+
+let userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+
+let myOptions = {
+    zoom: 15,
+    center: userLocation,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+
+let mapObject = new google.maps.Map(document.getElementById("map"), myOptions)
+
+new google.maps.Marker({
+    map: mapObject,
+    position: userLocation
+})
+
+function displayAddress(latLng) {
+    let geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+            "location": latLng
+        },
+        function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK)
+                document.getElementById("address").innerHTML = results[0].formatted_address;
+            else
+                document.getElementById("error").innerHTML += "Unable to retrieve your address" + "<br />";
+        });
+}

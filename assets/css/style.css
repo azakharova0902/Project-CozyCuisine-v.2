@@ -66,8 +66,8 @@ a:hover {
 }
 
 .hero-image-2 {
-    background-image: url("../images/hero-search.jpg");
-    background-size: 100%;
+    /*background-image: url("../images/hero-search.jpg");*/
+    background-size: cover;
     justify-content: center;
     background-repeat: no-repeat;
     display: flex;
@@ -88,6 +88,10 @@ a:hover {
 .why-us:hover {
     transform: scale3d(1.05, 1.05, 1.05);
     background-color: rgba(7, 87, 103, 0.7);
+}
+
+.story {
+    display: flex;
 }
 
 @keyframes pulse {
@@ -123,7 +127,7 @@ li {
 .jumbotron {
     border: 2px solid white;
     border-radius: 0;
-    width: 48%;
+    width: 88%;
     height: 540px;
     float: right;
     padding-top: 20px;
@@ -131,6 +135,7 @@ li {
     background-color: rgba(7, 87, 103, 0.7);
     color: whitesmoke;
     letter-spacing: 2.5px;
+    font-size: 25px;
 }
 
 
@@ -452,10 +457,14 @@ i:hover {
     }
 }
 
-
-/*.search {
-    margin-bottom: 400px;
-}*/
+.search {
+    max-width: 60%;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: 20%;
+    left: 20%;
+}
 
 #search-field {
     width: 90%;
@@ -463,6 +472,7 @@ i:hover {
 
 .browse-recipes {
     color: whitesmoke;
+    justify-content: center;
 }
 
 #output {
@@ -475,4 +485,17 @@ i:hover {
 #source-link {
     color: white;
     font-size: medium;
+}
+
+#map {
+    display: inline-flex;
+    width: 550px;
+    margin-top: 45px;
+    margin-left: 35px;
+    border: 9px solid white;
+}
+
+p.address-line {
+    color: white;
+    display: inline;
 }
