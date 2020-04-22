@@ -48,7 +48,7 @@
         </div>
     </header>
 
-    <!--Main section with Workshop details and Sign Up form-->
+    <!--Main section with Workshop details and Google Directions-->
     <section class="classes">
         <div class="workshop">
             <div>
@@ -81,26 +81,23 @@
             </div>
         </div>
         <div class="container-ws">
-            <form action="congrats.html" method="post" id="signup-form" class="signup-form">
-                <h2>Let's get you signed up!</h2>
+            <form action="#" method="get" id="calculate-route" class="directions-form">
+                <h2>Let's help you find us!</h2>
 
-                <label for="fname">First Name</label>
-                <input class="text-input" name="first_name" id="fname" type="text" required="">
+                <label for="from">From:</label>
+                <input class="text-input" name="from" id="from" type="text" required="required" placeholder="My location">
+                <a id="from-link" href="#"> Locate Me </a><br/>
 
-                <label for="lname">Last Name</label>
-                <input class="text-input" name="last_name" id="lname" type="text" required="">
+                <label for="to" class="to-label">To:</label>
+                <input class="text-input" name="to" id="to" type="text" required="required" placeholder="Address">
 
-                <label for="email">Email Address</label>
-                <input class="text-input" name="email_address" id="email" type="email" required="">
-
-                <input class="join-button" type="submit" value="Let's Cook!">
+                <input class="join-button" type="submit" value="Let's Go!">
             </form>
 
             <!--GOOGLE MAP-->
 
             <div id="map"></div>
-            <p class="address-line"><b>Address</b>: <span id="address"></span></p>
-            <p id="error"></p>
+            <p id="error" style="color: white;"></p>
         </div>
     </section>
 
@@ -125,69 +122,8 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <!-- <script src="../assets/js/myscript.js"></script> -->
-    <script>
-        function displayAddress(latLng) {
-            let geocoder = new google.maps.Geocoder();
-            geocoder.geocode({
-                    "location": latLng
-                },
-                function(results, status) {
-                    if (status == google.maps.GeocoderStatus.OK)
-                        document.getElementById("address").innerHTML = results[0].formatted_address;
-                    else
-                        document.getElementById("error").innerHTML += "Sorry, ww\e couldn't find your address" + "<br />";
-                });
-        }
+    <script src="../assets/js/myscript.js"></script>
 
-        function geolocationSuccess(position) {
-            let userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-            displayAddress(userLocation);
-
-            let mySettings = {
-                zoom: 14,
-                center: userLocation,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            // Draw the map
-            let mapObject = new google.maps.Map(document.getElementById("map"), mySettings);
-            // Place the marker
-            new google.maps.Marker({
-                map: mapObject,
-                position: userLocation
-            });
-            // Draw a circle around the user position to have an idea of the current localization accuracy
-            let circle = new google.maps.Circle({
-                center: userLocation,
-                radius: position.coords.accuracy,
-                map: mapObject,
-                fillColor: '#0000FF',
-                fillOpacity: 0.5,
-                strokeColor: '#0000FF',
-                strokeOpacity: 1.0
-            });
-            mapObject.fitBounds(circle.getBounds());
-        }
-
-        function geolocationError(positionError) {
-            document.getElementById("error").innerHTML += "Error: " + positionError.message + "<br />";
-        }
-
-        function geolocateUser() {
-            // If the browser supports the Geolocation API
-            if (navigator.geolocation) {
-                let positionOptions = {
-                    enableHighAccuracy: true,
-                    timeout: 10 * 1000
-                };
-                navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
-            } else
-                document.getElementById("error").innerHTML += "Your browser doesn't support the Geolocation API";
-        }
-
-        window.onload = geolocateUser;
-    </script>
 
 </body>
 

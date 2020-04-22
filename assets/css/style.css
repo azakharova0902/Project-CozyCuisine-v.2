@@ -348,7 +348,10 @@ i:hover {
     text-align: justify;
 }
 
-.signup-form {
+
+/* Map section */
+
+.directions-form {
     margin-top: 35px;
     margin-left: 175px;
     color: #fff;
@@ -357,7 +360,7 @@ i:hover {
     border: 9px solid white;
 }
 
-.signup-form>h2 {
+.directions-form>h2 {
     color: #fafafa;
     margin-bottom: 20px;
 }
@@ -397,22 +400,29 @@ i:hover {
     display: flex;
 }
 
-
-/* EMBEDED MAP */
-
-.mapouter {
-    position: relative;
-    text-align: right;
-    padding-top: 35px;
-    padding-left: 15px;
+#from-link {
+    padding: 5px;
+    color: white;
+    border: 1px solid white;
+    background-color: teal;
+    text-align: center;
 }
 
-.gmap_canvas {
-    overflow: hidden;
-    background: none !important;
-    height: 460px;
-    width: 585px;
+.to-label {
+    margin-top: 10px;
+}
+
+#map {
+    display: inline-flex;
+    width: 550px;
+    margin-top: 45px;
+    margin-left: 35px;
     border: 9px solid white;
+}
+
+.directions-form {
+    color: white;
+    display: inline;
 }
 
 @media screen and (max-width: 798px) {
@@ -485,17 +495,4 @@ i:hover {
 #source-link {
     color: white;
     font-size: medium;
-}
-
-#map {
-    display: inline-flex;
-    width: 550px;
-    margin-top: 45px;
-    margin-left: 35px;
-    border: 9px solid white;
-}
-
-p.address-line {
-    color: white;
-    display: inline;
 }
