@@ -6,7 +6,7 @@ const API_URL_Spoon = `https://api.spoonacular.com/recipes/complexSearch?apiKey=
 
 // const google_URL = `https://maps.googleapis.com/maps/api/directions/json?key=${API_KEY_Google}&origin=` + start + `&destination=` + end
 
-const destination = "33 King Street West, Toronto, ON"
+// const destination = "33 King Street West, Toronto, ON"
 
 //Spoonacular API block of code to render recipes upon request on Search.html
 
@@ -37,6 +37,10 @@ function getRecipe(query) {
         }
     })
 }
+
+
+// -------------------------------------------GOOGLE API-------------------------------------------------------------//
+
 
 // Google Maps APIs (Geocoder and Directions) for Workshop.html
 
@@ -73,7 +77,7 @@ function calculateRoute(from, to) {
 $(document).ready(function() {
     // If the browser supports the Geolocation API
     if (typeof navigator.geolocation == "undefined") {
-        $("#error").text("Sorry, but looks like your browser doesn't support the Geolocation API")
+        $("#error").text("Sorry, but looks like your browser doesn't support the Geolocation")
         return
     }
 
@@ -90,7 +94,7 @@ $(document).ready(function() {
                         if (status == google.maps.GeocoderStatus.OK)
                             $("#" + addressId).val(results[0].formatted_address)
                         else
-                            $("#error").append("Unable to retrieve your address<br />")
+                            $("#error").append("Sorry, we were unable to retrieve your address<br />")
                     })
             },
             function(positionError) {
@@ -109,9 +113,10 @@ $(document).ready(function() {
 
 let myOptions = {
     zoom: 10,
-    center: new google.maps.LatLng(43.688239, -79.393882),
+    center: new google.maps.LatLng(43.688239, -79.393882), // the map center is set for GTA
     mapTypeId: google.maps.MapTypeId.ROADMAP
 }
 
+// Let's now make sure that our map loads when the page is loaded (even before we set any directions)
 let mapObject = new google.maps.Map(document.getElementById("map"), myOptions)
 window.onload = mapObject
