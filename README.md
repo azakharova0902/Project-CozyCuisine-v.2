@@ -6,6 +6,8 @@ Please enjoy our demo video:
 
 ![My demo](./images/api-demo.gif)
 
+![My demo 2](./images/api-demo2.gif)
+
 This website was designed to share simple and delicious recipes for any occasion that are developed by experienced Chef of Cozy Cuisine Ltd. It gives you access to a wide range of mouthwatering options for you and your family! In addition, Cozy Cuisine offers culinary workshops to help you believe that YOU. CAN. COOK.
 
 # UX
