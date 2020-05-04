@@ -2,6 +2,10 @@
 
 Milestone Project for Interactive Frontend Development - Code Institute
 
+Link to my website:
+
+https://azakharova0902.github.io/Project-CozyCuisine-v.2/index.html
+
 Please enjoy our demo video:
 
 ![My demo](./images/api-demo.gif)
